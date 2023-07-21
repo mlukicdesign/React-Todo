@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
 import { NewTodoForm } from "./NewTodoForm";
 import { TodoList } from "../TodoList";
 // import { todo } from "node:test";
 
+
+// import hooks at beginning of file
+
 export default function App() {
   
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS")
+    if (localValue == null) return []
+
+    return JSON.parse(localValue)
+  });
+
+
   const [newItem, setNewItem] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("ITEM", JSON.stringify(todos))
+  }, [todos])
 
   function addTodo(title) {
      setTodos((currentTodos) => {
@@ -18,7 +32,6 @@ export default function App() {
     });
  
     setNewItem("")
-
   
   }
 
