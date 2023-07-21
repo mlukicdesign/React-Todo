@@ -1,8 +1,4 @@
-# React + Vite
+# Simple Todo App using React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The code creates a simple todo list application using React. The user can add new todo items, mark them as completed or incomplete using checkboxes, and delete todo items using the "Delete" button. The code uses React's state (useState) to manage the list of todos and the input field for adding new items. When the form is submitted, a new todo item is added to the list of todos, and the input field is cleared. The toggleTodo function is responsible for updating the completed status of a todo item, while the deleteTodo function is used to remove a todo item from the list. The todo list is rendered with checkboxes and "Delete" buttons for each item. If there are no todos, a message "Nothing To Do" is displayed.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
